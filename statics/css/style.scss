@@ -1,0 +1,162 @@
+@mixin flex(){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+body{
+    width: 100%;
+}
+
+.wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // padding-inline: 5%;
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .container{
+        
+        padding-block: 20px;
+        width: min(350px, 100%);
+        min-height: 400px;
+        background: rgba(0,0,0,0.5);
+        @include flex();
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        border-radius: 8px;
+        color: rgb(224, 220, 220);
+        
+        .form{
+            position: absolute;
+            margin-bottom: 20px;
+            top: 10px;
+            right: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding-inline: 20px;
+            z-index: 4;
+            form{
+                width: 100%;
+                border-radius: 24px;
+                border: 2px solid rgba(79, 79, 79, 0.372);
+                width: 100%;
+                @include flex();
+                flex-direction: row;
+                input{
+                    width: 100%;
+                    flex: 3;
+                    padding: 5px 8px;
+                    outline: none;
+                    border: none;              
+                    border-radius: 24px 0 0 24px;
+                    background: none;
+                    color: white;
+                    font-size: 16px;
+                }
+                button{
+                    flex: 1;
+                    padding: 5px 8px;
+                    outline: none;
+                    border: none;
+                    border-left: 2px solid rgba(79, 79, 79, 0.372);
+                    background: none;
+                    color: white;
+                    border-radius: 0 24px 24px 0;
+                }
+           
+            }
+        }
+    
+        .img{
+            width: 50%;
+            text-align: center;
+            img{
+                width: 100px;
+                max-height: 100px;
+            }
+        }
+        .weather-infos{
+            width: 100%;         
+            @include flex();
+            justify-content: unset;
+            overflow: hidden;
+            // transition: max-width 1.5s;
+            z-index: 1;
+            gap: 20px;
+            .status{
+                text-align: center;
+                // color: rgb(224, 220, 220);
+                span{
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+            .data{
+                width: 100%;
+                @include flex();
+                flex-direction: row;
+                // gap: 30px;
+                div{
+                    width: 100%;
+                    @include flex();
+                    flex-direction: row;
+                    gap: 5px;
+                    img{
+                        align-self: start;
+                    }
+                    p{
+                        font-size: 18px;
+                        font-weight: 400;
+                        // color: rgb(224, 220, 220);
+                        @include flex();
+                        gap: 5px;
+                        span{
+                            font-size: 24px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+       
+        }
+        #notFoundError{
+            @include flex();
+            gap: 20px;
+            display: none;
+            .img{
+                img{
+                    width: 100%;
+                }
+            }
+       }
+    }
+}

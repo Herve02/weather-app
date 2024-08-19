@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="../statics/css/style.css">
+    <script src="../statics/js/script.js" defer></script>
+</head>
+<body>
+<div class="wrapper">
+    <video src="../statics/images/changing-weathergiffs.mp4" autoplay muted loop id="video"></video>
+<div class="container">
+    <div class="form">
+        <form action="">
+            <input type="text" placeholder="search for city" id="input">
+            <button type="submit" id="btn">search</button>
+        </form>
+    </div>
+    <div class="weather-infos">
+       <p id="#cityName"></p>
+        <div class="img">
+            <img src="../statics/images/Partly-cloudy.png" alt="">
+        </div>
+        <div class="status">
+            <span id="temp"></span>
+            <p id="status"></p>
+        </div>
+        <div class="data">
+            <div id="humidity">
+               <img src="../statics/images/humidity.svg"alt=""> <p>Humidity<span class="humidity"></span></p>
+            </div>
+            <div id="wind">
+                <img src="../statics/images/wind.svg" alt=""> <p>Wind<span class="wind"></span></p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- <div id="notFoundError">
+        <div class="img">
+            <img src="../statics/images/error.jpeg" alt="">
+        </div>
+    </div> -->
+</div>
+</div>
+</body>
+</html>
